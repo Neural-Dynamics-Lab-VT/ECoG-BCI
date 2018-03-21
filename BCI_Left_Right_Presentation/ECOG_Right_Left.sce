@@ -3,6 +3,8 @@
 
 response_matching = simple_matching;
 default_font_size = 48;
+# TODO:: check if this is needed or not
+write_codes = true;
 
 begin;
 
@@ -80,6 +82,11 @@ trial {
 begin_pcl;
 
 # Create an array to snyc the text and the picture
+if (output_port_manager.port_count() == 0) then
+   term.print( "Forgot to add an output port!" )
+end;
+output_port oport = output_port_manager.get_port( 1 );
+
 array<int> index[2];
 index[1] = 1;
 index[2] = 2;
@@ -89,7 +96,8 @@ intro_trial.present();
 loop int i = 1 until i > 5 begin
 	index.shuffle();
 	pic.set_part(1, arrows[index[1]]);
-	event1.set_event_code(arrows[index[1]].description());
+	event1.set_event_code(arrows[index[1]].description());	
+	oport.send_code(index[1]);
 	main_trial.present();
 	wait_trial.present();
 	i = i + 1
