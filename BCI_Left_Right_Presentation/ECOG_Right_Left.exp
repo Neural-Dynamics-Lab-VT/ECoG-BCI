@@ -1,5 +1,5 @@
 <ver>20.1</ver>
-<efn>C:\Courses\Neuro Data\Presentation\ECOG\ECOG_Right_Left.exp</efn>
+<efn>C:\Abhinuv's Data\Neuro Data\ECoG-BCI\BCI_Left_Right_Presentation\ECOG_Right_Left.exp</efn>
 <author></author>
 <con>
 <pause>P</pause>
@@ -20,12 +20,12 @@
 </con>
 <dbi></dbi>
 <dbs>button</dbs>
-<ddi>1</ddi>
+<ddi>0</ddi>
 <dds>
 <icm_profile></icm_profile>
 <use_icm>0</use_icm>
 </dds>
-<ddv>Intel(R) HD Graphics 620</ddv>
+<ddv>Primary Display Driver</ddv>
 <depchg>1</depchg>
 <discard_windows_messages>0</discard_windows_messages>
 <display_status_window>1</display_status_window>
@@ -40,10 +40,10 @@
 <lfn></lfn>
 </docs>
 <dp_list></dp_list>
-<dsd>C:\Courses\Neuro Data\Presentation\ECOG</dsd>
+<dsd>C:\Abhinuv's Data\Neuro Data\ECoG-BCI\BCI_Left_Right_Presentation</dsd>
 <dxv>8</dxv>
 <efs>
-<filename>C:\Courses\Neuro Data\Presentation\ECOG\ECOG_Right_Left.sce</filename>
+<filename>C:\Abhinuv's Data\Neuro Data\ECoG-BCI\BCI_Left_Right_Presentation\ECOG_Right_Left.sce</filename>
 </efs>
 <exclusive_mouse>1</exclusive_mouse>
 <exp_version></exp_version>
@@ -118,7 +118,7 @@
 <idt>0</idt>
 <ilc>0</ilc>
 <ip_chans></ip_chans>
-<lfd>C:\Courses\Neuro Data\Presentation\ECOG</lfd>
+<lfd>C:\Abhinuv's Data\Neuro Data\ECoG-BCI\BCI_Left_Right_Presentation</lfd>
 <lnb>2</lnb>
 <lno>4</lno>
 <log>
@@ -128,7 +128,7 @@
 <its>0</its>
 <meta>1</meta>
 <pien>0</pien>
-<set_def_file>C:\Courses\Neuro Data\Presentation\ECOG\ECOG_Right_Left.sdf</set_def_file>
+<set_def_file>C:\Abhinuv's Data\Neuro Data\ECoG-BCI\BCI_Left_Right_Presentation\ECOG_Right_Left.sdf</set_def_file>
 <stimulus_list>0</stimulus_list>
 <subject_id></subject_id>
 <subject_id_pol>0</subject_id_pol>
@@ -148,11 +148,66 @@
 <minpv></minpv>
 <nam></nam>
 <one_processor>2</one_processor>
-<oports></oports>
+<oports>
+<p>
+<ama>0</ama>
+<ami>0</ami>
+<at>0</at>
+<dpw>0</dpw>
+<dsdi>0</dsdi>
+<dsi>0</dsi>
+<dsn>port0</dsn>
+<igm>0</igm>
+<il>0</il>
+<ivm>0</ivm>
+<mtype>dig</mtype>
+<piai>Dev1</piai>
+<pian>NI-DAQmx</pian>
+<pihpn>USB-6501</pihpn>
+<pindex>2</pindex>
+<rs>1</rs>
+<rt>0</rt>
+</p>
+</oports>
 <out_encrypt_key></out_encrypt_key>
 <pi_list></pi_list>
 <plat>1</plat>
-<port_devices></port_devices>
+<port_devices>
+<device>
+<parameters>
+<cts>0</cts>
+<dsrin>0</dsrin>
+<dsrout>0</dsrout>
+<dtr>disable</dtr>
+<rts>disable</rts>
+<set_fifo>1</set_fifo>
+<spd></spd>
+<spp></spp>
+<spr></spr>
+<sps></sps>
+</parameters>
+<piai>COM1</piai>
+<pian>Serial Port</pian>
+<pihpn>COM1</pihpn>
+</device>
+<device>
+<parameters>
+<cts>0</cts>
+<dsrin>0</dsrin>
+<dsrout>0</dsrout>
+<dtr>disable</dtr>
+<rts>disable</rts>
+<set_fifo>1</set_fifo>
+<spd></spd>
+<spp></spp>
+<spr></spr>
+<sps></sps>
+</parameters>
+<piai>COM3</piai>
+<pian>Serial Port</pian>
+<pihpn>COM3</pihpn>
+</device>
+</port_devices>
 <rdl>
 <device>
 <abs_axis>
@@ -202,6 +257,11 @@
 <name>Keyboard</name>
 </device>
 <device>
+<device_type>3</device_type>
+<dx_device_type>0</dx_device_type>
+<name>HID Keyboard Device</name>
+</device>
+<device>
 <abs_axis>
 <dead_zone>0</dead_zone>
 <max>1000</max>
@@ -244,203 +304,14 @@
 <name>HID-compliant mouse</name>
 </device>
 <device>
-<device_type>3</device_type>
-<dx_device_type>0</dx_device_type>
-<name>Keyboard (unknown)</name>
-</device>
-<device>
-<device_type>3</device_type>
-<dx_device_type>0</dx_device_type>
-<name>HID Keyboard Device</name>
-</device>
-<device>
-<device_type>3</device_type>
-<dx_device_type>0</dx_device_type>
-<name>Standard PS/2 Keyboard</name>
-</device>
-<device>
-<device_type>3</device_type>
-<dx_device_type>0</dx_device_type>
-<name>HID Keyboard Device 1</name>
-</device>
-<device>
-<device_type>3</device_type>
-<dx_device_type>0</dx_device_type>
-<name>HID Keyboard Device 2</name>
-</device>
-<device>
-<abs_axis>
-<dead_zone>0</dead_zone>
-<max>1000</max>
-<min>-1000</min>
-<name>X-axis</name>
-<saturation>1</saturation>
-</abs_axis>
-<abs_axis>
-<dead_zone>0</dead_zone>
-<max>1000</max>
-<min>-1000</min>
-<name>Y-axis</name>
-<saturation>1</saturation>
-</abs_axis>
-<axis>
-<max>1000</max>
-<min>-1000</min>
-<name>X-axis</name>
-<restricted>1</restricted>
-<scale>1</scale>
-</axis>
-<axis>
-<max>1000</max>
-<min>-1000</min>
-<name>Y-axis</name>
-<restricted>1</restricted>
-<scale>1</scale>
-</axis>
-<axis>
-<max>1000</max>
-<min>-1000</min>
-<name>Wheel</name>
-<restricted>1</restricted>
-<scale>1</scale>
-</axis>
-<device_type>2</device_type>
-<dx_device_type>0</dx_device_type>
-<max_raw_pos>65535</max_raw_pos>
-<min_raw_pos>0</min_raw_pos>
-<name>PS/2 Compatible Mouse</name>
-</device>
-<device>
-<abs_axis>
-<dead_zone>0</dead_zone>
-<max>1000</max>
-<min>-1000</min>
-<name>X-axis</name>
-<saturation>1</saturation>
-</abs_axis>
-<abs_axis>
-<dead_zone>0</dead_zone>
-<max>1000</max>
-<min>-1000</min>
-<name>Y-axis</name>
-<saturation>1</saturation>
-</abs_axis>
-<axis>
-<max>1000</max>
-<min>-1000</min>
-<name>X-axis</name>
-<restricted>1</restricted>
-<scale>1</scale>
-</axis>
-<axis>
-<max>1000</max>
-<min>-1000</min>
-<name>Y-axis</name>
-<restricted>1</restricted>
-<scale>1</scale>
-</axis>
-<axis>
-<max>1000</max>
-<min>-1000</min>
-<name>Wheel</name>
-<restricted>1</restricted>
-<scale>1</scale>
-</axis>
-<device_type>2</device_type>
-<dx_device_type>0</dx_device_type>
-<max_raw_pos>65535</max_raw_pos>
-<min_raw_pos>0</min_raw_pos>
-<name>HID-compliant mouse 1</name>
+<device_type>4</device_type>
+<dx_device_type>17</dx_device_type>
+<name>USB NETVISTA FULL WIDTH KEYBOARD</name>
 </device>
 <device>
 <device_type>4</device_type>
 <dx_device_type>17</dx_device_type>
-<name>GPIO Button Driver</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Intel(R) HID Event Filter</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Intel(R) HID Event Filter 1</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Intel(R) HID Event Filter 2</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Intel(R) HID Event Filter 3</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Intel(R) HID Event Filter 4</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Intel(R) HID Event Filter 5</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Intel(R) HID Event Filter 6</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Intel(R) HID Event Filter 7</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Intel(R) HID Event Filter 8</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Intel(R) HID Event Filter 9</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Converted Portable Device Control device</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Intel(R) HID Event Filter 10</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Intel(R) HID Event Filter 11</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Intel(R) HID Event Filter 12</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Converted Portable Device Control device 1</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Intel(R) HID Event Filter 13</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>GPIO Button Driver 1</name>
+<name>USB NETVISTA FULL WIDTH KEYBOARD 1</name>
 </device>
 <device>
 <axis>
@@ -755,7 +626,7 @@
 </sce>
 <sce>
 <overrides></overrides>
-<sfn>C:\Courses\Neuro Data\Presentation\ECOG\ECOG_Right_Left.sce</sfn>
+<sfn>C:\Abhinuv's Data\Neuro Data\ECoG-BCI\BCI_Left_Right_Presentation\ECOG_Right_Left.sce</sfn>
 </sce>
 <sct>
 <capture_device>

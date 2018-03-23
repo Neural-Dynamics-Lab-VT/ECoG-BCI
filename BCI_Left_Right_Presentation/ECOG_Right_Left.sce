@@ -5,6 +5,7 @@ response_matching = simple_matching;
 default_font_size = 48;
 # TODO:: check if this is needed or not
 write_codes = true;
+pulse_width = indefinite_port_code;
 
 begin;
 
