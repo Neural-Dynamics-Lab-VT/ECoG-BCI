@@ -98,6 +98,7 @@ loop int i = 1 until i > 5 begin
 	pic.set_part(1, arrows[index[1]]);
 	event1.set_event_code(arrows[index[1]].description());	
 	oport.send_code(index[1]);
+	term.print(index[1]);
 	main_trial.present();
 	wait_trial.present();
 	i = i + 1
