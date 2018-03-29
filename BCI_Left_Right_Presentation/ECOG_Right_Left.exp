@@ -20,12 +20,12 @@
 </con>
 <dbi></dbi>
 <dbs>button</dbs>
-<ddi>0</ddi>
+<ddi>1</ddi>
 <dds>
 <icm_profile></icm_profile>
 <use_icm>0</use_icm>
 </dds>
-<ddv>Primary Display Driver</ddv>
+<ddv>Intel(R) HD Graphics 620</ddv>
 <depchg>1</depchg>
 <discard_windows_messages>0</discard_windows_messages>
 <display_status_window>1</display_status_window>
@@ -227,9 +227,46 @@
 <name>HID Keyboard Device</name>
 </device>
 <device>
-<device_type>3</device_type>
+<abs_axis>
+<dead_zone>0</dead_zone>
+<max>1000</max>
+<min>-1000</min>
+<name>X-axis</name>
+<saturation>1</saturation>
+</abs_axis>
+<abs_axis>
+<dead_zone>0</dead_zone>
+<max>1000</max>
+<min>-1000</min>
+<name>Y-axis</name>
+<saturation>1</saturation>
+</abs_axis>
+<axis>
+<max>1000</max>
+<min>-1000</min>
+<name>X-axis</name>
+<restricted>1</restricted>
+<scale>1</scale>
+</axis>
+<axis>
+<max>1000</max>
+<min>-1000</min>
+<name>Y-axis</name>
+<restricted>1</restricted>
+<scale>1</scale>
+</axis>
+<axis>
+<max>1000</max>
+<min>-1000</min>
+<name>Wheel</name>
+<restricted>1</restricted>
+<scale>1</scale>
+</axis>
+<device_type>2</device_type>
 <dx_device_type>0</dx_device_type>
-<name>Standard PS/2 Keyboard</name>
+<max_raw_pos>65535</max_raw_pos>
+<min_raw_pos>0</min_raw_pos>
+<name>HID-compliant mouse</name>
 </device>
 <device>
 <device_type>3</device_type>
@@ -239,7 +276,17 @@
 <device>
 <device_type>3</device_type>
 <dx_device_type>0</dx_device_type>
+<name>Standard PS/2 Keyboard</name>
+</device>
+<device>
+<device_type>3</device_type>
+<dx_device_type>0</dx_device_type>
 <name>HID Keyboard Device 2</name>
+</device>
+<device>
+<device_type>3</device_type>
+<dx_device_type>0</dx_device_type>
+<name>HID Keyboard Device 3</name>
 </device>
 <device>
 <abs_axis>
@@ -323,7 +370,7 @@
 <dx_device_type>0</dx_device_type>
 <max_raw_pos>65535</max_raw_pos>
 <min_raw_pos>0</min_raw_pos>
-<name>HID-compliant mouse</name>
+<name>HID-compliant mouse 1</name>
 </device>
 <device>
 <device_type>4</device_type>
@@ -374,6 +421,11 @@
 <device_type>4</device_type>
 <dx_device_type>17</dx_device_type>
 <name>Intel(R) HID Event Filter 8</name>
+</device>
+<device>
+<device_type>4</device_type>
+<dx_device_type>17</dx_device_type>
+<name>USB OPTICAL MOUSE </name>
 </device>
 <device>
 <device_type>4</device_type>
@@ -776,7 +828,7 @@
 <sdv>Primary Sound Driver</sdv>
 <show_dis>0</show_dis>
 <show_parm>0</show_parm>
-<show_term>0</show_term>
+<show_term>1</show_term>
 <smc>2</smc>
 <smd>16</smd>
 <smr>44100</smr>
