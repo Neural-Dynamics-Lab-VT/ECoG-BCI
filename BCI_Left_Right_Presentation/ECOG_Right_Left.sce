@@ -1,11 +1,15 @@
 ## Scenario File for ECOG BCI experiment
+## Left vs Right
 ## v1.0 Abhinuv
+## v1.1 Abhinuv - Changed the task to match physio dataset
 
 response_matching = simple_matching;
 default_font_size = 48;
 # TODO:: check if this is needed or not
 write_codes = true;
 pulse_width = indefinite_port_code;
+default_background_color = 255,255,255;
+default_text_color = 0,0,0;
 
 begin;
  
@@ -16,13 +20,13 @@ text { caption = "Please take a deep breath, \n relax and the experiment will st
 text { caption = "You will be presented with the following stimuli";} instr_text_1;
 text { caption = "For the left arrow, please imagine moving your left hand";} instr_text_2;
 text { caption = "For the right arrow, please imagine moving your right hand";} instr_text_3;
-text { caption = "Please do not close your eyes to imagine.";} instr_text_4;
+text { caption = "Please do not close your eyes to imagine.\n If the screen is blank, you can just relax";} instr_text_4;
 text { caption = "";} no_text;
 
 # Array for the text
 array {
-   text { caption = "Left Arrow"; description = "Left Arrow"; } left;
-   text { caption = "Right Arrow"; description = "Right Arrow"; } right; 
+   text { caption = "Left Hand"; description = "Left Arrow"; } left;
+   text { caption = "Right Hand"; description = "Right Arrow"; } right; 
 	text { caption = ""; description = "No Arrow";} no_arrow;
 } arrows;
 
@@ -33,6 +37,8 @@ array {
 	bitmap { filename = "nope.jpg";description = "No Pic";} no_pic;
 } arrow_pictures;
 
+# Image for for the initial wait trial
+bitmap { filename = "cross.jpg"; description = "Cross";}cross_pic;
 # Instruction trial
 trial{
 	picture{
@@ -80,6 +86,8 @@ trial {
 	picture{
 		text no_text;
 		x = 0;y = 0;
+		bitmap cross_pic;
+		x=0;y=0;
 	} no_text_pic;	
 	time = 0;	 
    } wait_trial;
@@ -90,11 +98,12 @@ trial {
 ##########################################################
 begin_pcl;
 # Experiment Parameters
-int instr_duration = 15000;
-int intro_duration = 5000;
+int instr_duration = 1500;
+int intro_duration = 2000;
 # TODO: These can be randomised later
 int wait_duration = 1000;
-int main_duration = 2000;
+int main_duration = 4000;
+int wait_main_duration = 3000;
 
 # Port OUT definations
 int instr_code = 100;
@@ -109,7 +118,7 @@ int number_of_trials = 5;
 instr_trial.set_duration(instr_duration);
 intro_trial.set_duration(intro_duration);
 wait_trial.set_duration(wait_duration);
-main_trial.set_duration(main_duration);
+
 
 # Create an array to snyc the text and the picture
 if (output_port_manager.port_count() == 0) then
@@ -117,37 +126,53 @@ if (output_port_manager.port_count() == 0) then
 end;
 output_port oport = output_port_manager.get_port( 1 );
 
-array<int> index[3];
+array<int> index[2];
 index[1] = 1;
 index[2] = 2;
-index[3] = 3;
+#index[3] = 3;
 
-#term.print_line("Start");
-#term.print_line(instr_code);
+term.print_line("Start");
+
+term.print_line(instr_code);
 oport.send_code(instr_code);
 instr_trial.present();
-#term.print_line("End");
-#term.print_line(intro_code);
+
+term.print_line(intro_code);
 oport.send_code(intro_code);
 intro_trial.present();
+
 loop int i = 1 until i > number_of_trials begin
 	index.shuffle();
+	# The Initial Wait with Cross 
+	term.print_line(wait_code);
+	oport.send_code(wait_code);
+	wait_trial.present();
+	
+	# Set up the actual Trial
 	pic.set_part(1, arrows[index[1]]);
 	pic.set_part(2, arrow_pictures[index[1]]);
 	event1.set_event_code(arrows[index[1]].description());	
 	if index[1] == 1 then 
-		#term.print_line(left_code);
+		term.print_line(left_code);
 		oport.send_code(left_code);
 	elseif index[1] == 2 then
-		#term.print_line(right_code);
+		term.print_line(right_code);
 		oport.send_code(right_code);
-	elseif index[1] == 3 then
+	#elseif index[1] == 3 then
 		#term.print_line(no_code);
-		oport.send_code(no_code);
+		#oport.send_code(no_code);
 	end;
+	
+	# Present the actual Trial
+	main_trial.set_duration(main_duration);
+	main_trial.present();	
+	
+	# Rest Period
+	pic.set_part(1, arrows[3]);
+	pic.set_part(2, arrow_pictures[3]);
+	event1.set_event_code(arrows[3].description());	
+	main_trial.set_duration(wait_main_duration);
 	main_trial.present();
-	#term.print_line(wait_code);
-	oport.send_code(wait_code);
-	wait_trial.present();
 	i = i + 1
 end;
+term.print_line("End");
