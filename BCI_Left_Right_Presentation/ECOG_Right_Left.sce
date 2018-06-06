@@ -98,8 +98,8 @@ trial {
 ##########################################################
 begin_pcl;
 # Experiment Parameters
-int instr_duration = 1500;
-int intro_duration = 2000;
+int instr_duration = 20000;
+int intro_duration = 20000;
 # TODO: These can be randomised later
 int wait_duration = 1000;
 int main_duration = 4000;
@@ -109,12 +109,14 @@ int wait_main_duration = 3000;
 int instr_code = 100;
 int intro_code = 101;
 int wait_code = 50;
-int left_code = 1;
-int right_code = 2;
-int no_code = 3;
+int left_code = 128;
+int right_code = 192;
+int no_code = 64;
+int cross_code =  8;
 
 
-int number_of_trials = 5;
+int number_of_trials = 12;
+
 instr_trial.set_duration(instr_duration);
 intro_trial.set_duration(intro_duration);
 wait_trial.set_duration(wait_duration);
@@ -144,8 +146,8 @@ intro_trial.present();
 loop int i = 1 until i > number_of_trials begin
 	index.shuffle();
 	# The Initial Wait with Cross 
-	term.print_line(wait_code);
-	oport.send_code(wait_code);
+	term.print_line(cross_code);
+	oport.send_code(cross_code);
 	wait_trial.present();
 	
 	# Set up the actual Trial
@@ -172,6 +174,8 @@ loop int i = 1 until i > number_of_trials begin
 	pic.set_part(2, arrow_pictures[3]);
 	event1.set_event_code(arrows[3].description());	
 	main_trial.set_duration(wait_main_duration);
+	oport.send_code(no_code);
+	term.print_line(no_code);
 	main_trial.present();
 	i = i + 1
 end;
